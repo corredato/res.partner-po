@@ -10,7 +10,7 @@
     'website': 'https://github.com/corredato',
     'depends': ['base', 'sale'],
     'data': ['views/res_partner_po.xml',
-             'views/sale_po.xml'
+             'views/sale_po.xml',
              ],
     'images': [],
     'demo': [],

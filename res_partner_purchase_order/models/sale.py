@@ -19,3 +19,9 @@ class SaleOrder(models.Model):
             raise ValidationError(
                 "A cotação não pode ser confirmada. O campo 'Número OC' deve ser preenchido.")
         return super(SaleOrder, self.with_context(bypass_check=True)).action_confirm()
+
+    def action_done(self):
+        if self.partner_id.purchase_order and not self.oc_number:
+            raise ValidationError(
+                "A cotação não pode ser confirmada. O campo 'Número OC' deve ser preenchido.")
+        return super(SaleOrder, self.with_context(bypass_check=True)).action_done()
